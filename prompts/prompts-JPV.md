@@ -45,27 +45,7 @@ Durante la fase de planificación se acordaron las decisiones siguientes (vía p
 
 ---
 
-## P3 — Persistir el plan en la raíz del proyecto
-
-**Prompt:**
-
-> Acepto el plan pero guardame el fichero como plan.md en la raíz del proyecto.
-
-**Por qué relevante:** decisión de tener el plan como documento auditable en el repo (no sólo en el directorio temporal de planes de Claude).
-
----
-
-## P4 — Discusión sobre relocalizar la migración a `backend/prisma/migrations`
-
-**Prompt:**
-
-> Si muevo el contenido de la carpeta db/migrations/001_to_ats_schema a backend/prisma/migrations seguiría funcionando bien? En caso de ser así hazlo.
-
-**Por qué relevante:** disparó la discusión sobre la incompatibilidad entre el formato multi-fichero con `\i` y meta-comandos psql vs. el formato esperado por Prisma (un único `migration.sql` por carpeta timestamped). La respuesta documentó las cinco razones por las que un movimiento literal no funcionaría.
-
----
-
-## P5 — Adaptar la migración al formato Prisma
+## P3 — Adaptar la migración al formato Prisma
 
 **Prompt:**
 
@@ -82,7 +62,7 @@ Durante la fase de planificación se acordaron las decisiones siguientes (vía p
 
 ---
 
-## P6 — Adaptar el backend al nuevo modelo de datos
+## P4 — Adaptar el backend al nuevo modelo de datos
 
 **Prompt:**
 
@@ -100,7 +80,7 @@ Durante la fase de planificación se acordaron las decisiones siguientes (vía p
 
 ---
 
-## P7 — Análisis de índices y propuestas justificadas
+## P5 — Análisis de índices y propuestas justificadas
 
 **Prompt:**
 
@@ -115,7 +95,7 @@ Durante la fase de planificación se acordaron las decisiones siguientes (vía p
 
 ---
 
-## P8 — Aplicar A, B y C; D y E como recomendaciones futuras
+## P6 — Aplicar A, B y C; D y E como recomendaciones futuras
 
 **Prompt:**
 
@@ -141,6 +121,6 @@ Durante la fase de planificación se acordaron las decisiones siguientes (vía p
 | Decisión / prompt | Artefacto |
 |---|---|
 | P1, P2 | [plan.md](../plan.md) |
-| P5 | [backend/prisma/migrations/20260504190000_to_ats_schema/](../backend/prisma/migrations/20260504190000_to_ats_schema/) (`migration.sql`, `rollback.sql`, `verify.sql`, `README.md`) |
-| P6 | [backend/prisma/schema.prisma](../backend/prisma/schema.prisma) reescrito con `@@map`/`@map` |
-| P7, P8 | [backend/prisma/migrations/20260505080000_optimize_indexes/](../backend/prisma/migrations/20260505080000_optimize_indexes/) (`migration.sql`, `FUTURE_RECOMMENDATIONS.md`) |
+| P3 | [backend/prisma/migrations/20260504190000_to_ats_schema/](../backend/prisma/migrations/20260504190000_to_ats_schema/) (`migration.sql`, `rollback.sql`, `verify.sql`, `README.md`) |
+| P4 | [backend/prisma/schema.prisma](../backend/prisma/schema.prisma) reescrito con `@@map`/`@map` |
+| P5, P6 | [backend/prisma/migrations/20260505080000_optimize_indexes/](../backend/prisma/migrations/20260505080000_optimize_indexes/) (`migration.sql`, `FUTURE_RECOMMENDATIONS.md`) |
